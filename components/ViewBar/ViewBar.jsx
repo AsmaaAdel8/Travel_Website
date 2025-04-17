@@ -2,7 +2,7 @@ import React from "react";
 import Headinghelper from "../Headinghelper";
 import DestinationSlider from "./DestinationSlider";
 
-function ViewBar() {
+function  ViewBar() {
   return (
     <div className="pt-[105vh] ">
       <Headinghelper header={"Explore Popular Destination"}/>

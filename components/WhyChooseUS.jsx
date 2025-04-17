@@ -6,8 +6,8 @@ function WhyChooseUS() {
   return (
     <div className="mt-[3%] p-7">
       <Headinghelper header={"Why Choose Us"} />
-      <div className="flex flex-row space-x-4 items-center mt-8 p-5 text-center">
-        <div className="lg:w-[35%] md:w-[30%]">
+      <div className="flex flex-row space-x-4 items-center mt-8 p-5 text-center flex-wrap ">
+        <div className="xl:w-[30%] w-[70%] mb-5 lg:w-[50%]">
           <img
             draggable="false"
             src="/images/trust.png"
@@ -19,7 +19,7 @@ function WhyChooseUS() {
             <h4>Lorem ipsum dolor sit amet consectetur.</h4>
           </div>
         </div>
-        <div className="lg:w-[35%] md:w-[30%]">
+        <div className="xl:w-[30%] w-[70%] mb-5 lg:w-[50%]">
           <img
             draggable="false"
             src="/images/booking.jpg"
@@ -31,7 +31,7 @@ function WhyChooseUS() {
             <h4>Lorem ipsum dolor adipisicing elit.</h4>
           </div>
         </div>
-        <div className="lg:w-[35%] md:w-[30%]">
+        <div className="xl:w-[30%] w-[70%] lg:w-[50%]">
           <BsGlobeEuropeAfrica className="h-[50%] w-[35%] mb-3 m-auto" />
           <div className="text-[15px]">
             <h1>Customer Care 24/7</h1>

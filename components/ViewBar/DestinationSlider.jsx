@@ -1,7 +1,13 @@
 "use client"
 import { recondedPlacesSlides } from "../../models/data";
-import Carousel from "react-multi-carousel";
-import "react-multi-carousel/lib/styles.css";
+// import Swiper core and required modules
+import { Navigation, Pagination, Scrollbar, A11y ,Autoplay } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/scrollbar";
 
 function DestinationSlider() {
   const responsive = {
@@ -24,25 +30,19 @@ function DestinationSlider() {
 
   return (
     <div>
-      <Carousel
-        swipeable={false}
-        draggable={false}
-        showDots={true}
-        responsive={responsive}
-        infinite={true}
-        autoPlay={true}
-        autoPlaySpeed={5000}
-        keyBoardControl={true}
-        customTransition="all .5"
-        transitionDuration={500}
-        containerClass="carousel-container"
-        removeArrowOnDeviceType={["tablet", "mobile"]}
-        dotListClass="custom-dot-list-style"
-        className="p-4"
-      >
+       <Swiper
+        className="w-[90%] mb-6 "
+          modules={[Navigation, Pagination, Scrollbar, A11y , Autoplay]}
+          spaceBetween={20}
+          slidesPerView={4}
+          autoplay
+          navigation
+          // onSwiper={(swiper) => console.log(swiper)}
+          // onSlideChange={() => console.log("slide change")}
+        >
         {recondedPlacesSlides.map((place) => {
           return (
-            <div
+            <SwiperSlide
               className="sm:w-[50vw] lg:w-[40vw] mx-3"
               key={place.id}
             >
@@ -55,10 +55,10 @@ function DestinationSlider() {
               />
               <h4 className="text-left p-3 font-medium">{place.title}</h4>
               <p>{place.p}</p>
-            </div>
+            </SwiperSlide>
           );
         })}
-      </Carousel>
+      </Swiper>
     </div>
   );
 }

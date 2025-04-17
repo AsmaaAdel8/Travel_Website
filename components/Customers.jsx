@@ -1,6 +1,15 @@
+"use client";
 import React from "react";
 import { FaStar } from "react-icons/fa";
 import { Reviowpersons } from "../models/data";
+// import Swiper core and required modules
+import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/scrollbar";
 
 function Customers() {
   const StarRating = ({ rate }) => {
@@ -25,9 +34,9 @@ function Customers() {
   };
 
   return (
-    <div className=" bg-blue-950 h-[70vh] ">
-      <div className="relative p-6 flex flex-row w-[90%] m-auto items-center">
-        <div className="mr-24 text-white pt-4 mt-4 text-[20px]">
+    <div className=" bg-blue-950 xl:h-[70vh] h-[100%]">
+      <div className="relative p-6 grid grid-cols-1 gap-4 xl:grid-cols-2 md:grid-cols-1 w-[90%] m-auto">
+        <div className="text-white pt-4 text-[20px]">
           <h1 className="font-bold">What our customers are saying us ?</h1>
           <p className="mb-4">
             Lorem ipsum dolor sit amet consectetur, adipisicing elit.
@@ -37,19 +46,23 @@ function Customers() {
           <p className="font-bold">4.88</p>
           <p>Overall rating</p>
           <div className="flex flex-row space-x-1">
-            <FaStar className="text-yellow-600" />
-            <FaStar className="text-yellow-600" />
-            <FaStar className="text-yellow-600" />
-            <FaStar className="text-yellow-600" />
-            <FaStar className="text-yellow-600" />
+            for(let x=1;x =5;x++)
+            {<FaStar className="text-yellow-600" key={x} />}
           </div>
         </div>
-        <div className="mt-[-8%] ">
+        <Swiper
+          modules={[Navigation, Pagination, Scrollbar, A11y]}
+          spaceBetween={30}
+          slidesPerView={1.5}
+          // navigation
+          // pagination={{ clickable: false }}
+          // scrollbar={{ draggable: false }}
+        >
           {Reviowpersons.map((person) => {
             return (
-              <div
+              <SwiperSlide
                 key={person.id}
-                className="absolute bg-white w-[35vw] p-4 rounded-xl"
+                className="absolute bg-white w-[35vw] p-4 rounded-xl h-50"
               >
                 <p className="font-bold">{person.commen}</p>
                 <StarRating rate={person.rate} />
@@ -64,10 +77,10 @@ function Customers() {
                     <p>{person.jop}</p>
                   </div>
                 </div>
-              </div>
+              </SwiperSlide>
             );
           })}
-        </div>
+        </Swiper>
       </div>
     </div>
   );

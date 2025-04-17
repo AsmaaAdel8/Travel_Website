@@ -29,11 +29,11 @@ function TravelNews() {
     },
   ];
   return (
-    <div className="m-auto mt-10 w-[90%] h-[40vh] mb-72">
+    <div className="m-auto mt-10 w-[90%] xl:h-[40vh] mb-72">
       <Headinghelper header={"Exciting Travels News For You"}/>
-      <div className="flex flex-row space-x-3 items-center mt-4">
+      <div className="flex flex-row space-x-3 items-center mt-4 flex-wrap xl:flex-nowrap">
         {News.map((place) => {
-          return <div key={place.id} className="w-[32%] h-[35vh]">
+          return <div key={place.id} className="w-[70%] h-[40vh] xl:w-[32%] md:w-[50%] mb-28">
             <img loading="lazy" draggable="false" src={place.src} className="h-[50vh] w-full rounded-lg"/>
             <h1 className="font-bold">Top 10 Places To Visit in {place.place}</h1>
             <p>{place.date}</p>

@@ -179,7 +179,7 @@ export const Reviowpersons = [
     rate: 4,
     jop:'IT Manager',
     commen:
-      "I enjoyed using this website for my recent trip to Greece. The hotel options were excellent, and the booking process was straightforward. I would have liked more detailed information on local attractions, but overall, a great experience!",
+      "I enjoyed using this website for my recent trip to Greece.SwiperSlide I would have liked more detailed information on local attractions, but overall, a great experience!",
   },
 ];
 export const HotelData=[
